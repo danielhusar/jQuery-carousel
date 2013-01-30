@@ -10,7 +10,8 @@
 		carousel: function (options) {
 
 			var settings = $.extend( {
-				'start'   : 1  //starting slide
+				'start'   : 1              //starting slide,
+				'easing'  : 'easeOutExpo'  //easing type
 			}, options); 
 
 
