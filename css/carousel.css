@@ -1,0 +1,38 @@
+.carousel{
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.carousel ul{
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	left: 0;
+}
+
+.carousel ul li{
+	float: left;
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel ul li img{
+	vertical-align: bottom;
+}
+
+.carousel ul li span{
+	position: absolute;
+	padding: 2%;
+	width: 96%;
+	background-color:rgba(0,0,0,0.5);
+	z-index: 2;
+	display: block;
+	bottom: 0;
+	color: white;
+}
