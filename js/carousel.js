@@ -46,12 +46,12 @@
 				//init carousel after frist image is loaded
 				$carousel.find('li > img').first().load(function(){
 
-					var $li    				= $carousel.find('li'),
+					var $slides    		= $carousel.find('.slide'),
 							$img   				= $carousel.find('img').first(),
 							width  				= $img.width(),
 							height 				= $img.height(),
 							cssTransforms = helpers.css3transformations(),
-							count         = $li.length;
+							count         = $slides.length;
 
 					//wrappers
 					$carousel.wrap('<div class="carousel"/>').wrap('<div class="carousel-content" />');
