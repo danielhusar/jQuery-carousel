@@ -44,8 +44,10 @@
     
 
 <pre class="code">$('#carousel').carousel({
-  'start' : 1
-});</pre>
+  'pause' : 1000,
+  'speed' : 1000
+});
+</pre>
 
 
 
@@ -54,7 +56,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="../js/carousel.js"></script>
   <script>
-  	$('#carousel').carousel();
+  	$('#carousel').carousel({
+			'pause' : 3000,
+			'speed' : 1000
+		});
   </script>
 </body>
 </html>

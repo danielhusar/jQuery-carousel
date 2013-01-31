@@ -86,24 +86,30 @@
 					if(settings.navigation){
 						var navItems = '',
 								navClass;
-						for(var i=1; i<=count; i++){
-							navClass = ( i === 1) ? 'current' : '';
+						for(var i = 0; i < count; i++){
+							navClass = ( i === 0) ? 'current' : '';
 							navItems = navItems + '<a href="#' + i + '" class="' + navClass + '"></a>';
 						};
 						$('.carousel').prepend('<div class="navigation">' + navItems + '</div>');
 					}
 
+
 					//slide content
 					function slideContent(){
-						var currentPos = -parseInt(($carousel.css('left')).replace('px', ''))/width || 0,
-						    nextPos    = (currentPos < count - 1) ? currentPos + 1 : 1,
+						var currentPos = -Math.round(Number(($carousel.css('left')).replace('px', ''))/width) || 0,
+						    nextPos    = (currentPos < (count - 1)) ? currentPos + 1  : 0,
 								position   = -nextPos * width;
+
+
+						$('.navigation a').removeClass('current');
+						$('.navigation a[href="#' + nextPos + '"]').addClass('current');
 
 						if(cssTransforms){
 							$carousel.css({'left': position + 'px'});
 						}else{
 							$carousel.animate({'left': position + 'px'}, settings.speed);
 						}
+						
 					}
 
 					//run the interval
