@@ -106,10 +106,13 @@
 
 				enableTransitions : function(){
 					this.$carousel.find('.'+ settings.slidesClass).css({
-						'-webkit-transition'	: settings.speed/1000 + 's',
-						'-moz-transition' 		: settings.speed/1000 + 's',
-						'-o-transition' 			: settings.speed/1000 + 's',
-						'transition' 					: settings.speed/1000 + 's'
+						'-webkit-transform'   				: 'translate3d(0, 0, 0)',
+						'-webkit-backface-visibility' : 'hidden',
+  					'-webkit-perspective' 				: 0,
+						'-webkit-transition'					: 'left ' + settings.speed/1000 + 's',
+						'-moz-transition' 						: 'left ' + settings.speed/1000 + 's',
+						'-o-transition' 							: 'left ' + settings.speed/1000 + 's',
+						'transition' 									: 'left ' + settings.speed/1000 + 's'
 					});
 				},
 
@@ -215,9 +218,11 @@
 
 					that.$carousel.swipeEvents()
 						.bind("swipeLeft",  function(){ 
+							clearInterval(that.interval);
 							that.slideContent('left');
 						})
 						.bind("swipeRight", function(){ 
+							clearInterval(that.interval);
 							that.slideContent('right');
 						});
 
