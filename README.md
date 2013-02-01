@@ -1,4 +1,12 @@
-Simple css3 jquery carousel
-=================================
+Simple css3 responsive jquery carousel
+======================================
 
-See demo section for demos.
+Features:
+	- responsive layout
+	- css3 transitions with fallback to jquery animate
+	- hardware acceleration on webkit
+	- touch events
+	- fully customizable
+	- easy carousel destroy
+
+See demo section for demo.

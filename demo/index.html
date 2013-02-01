@@ -71,8 +71,19 @@
     <p>Sample usage:</p>
 
 <pre class="code">$('#carousel').carousel({
-  'pause' : 2000,
-  'speed' : 500
+  'arrows'          : true,                 //display navigation arrows
+  'navigation'      : true,                 //display navigation
+  'pause'           : 5000,                 //pause between slides
+  'speed'           : 2000,                 //speed for animation
+  'wrapClass'       : 'carousel',
+  'contentClass'    : 'carousel-content',
+  'slidesClass'     : 'carousel-slides',
+  'slideClass'      : 'slide',
+  'arrowsClass'     : 'arrow',
+  'prevArrowClass'  : 'prev',
+  'nextArrowClass'  : 'next',
+  'navigationClass' : 'navigation',
+  'currentNavClass' : 'current'
 });
 </pre>
 

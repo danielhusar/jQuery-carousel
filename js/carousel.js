@@ -49,7 +49,6 @@
 			//main carousel class
 			var carousel = {
 				width 					: 0,
-				height 					: 0,
 				interval 				: 0,
 				currentSlide 		: 0,
 				$carousel 		  : {},
@@ -127,17 +126,14 @@
 
 				sizes : function(){
 					this.width 		= this.$carousel.width();
-					this.height 	= this.$carousel.height();
 
 					//basic styles
 					this.$carousel.find('.'+ settings.contentClass +', .'+ settings.wrapClass +', .'+ settings.slideClass).css({
-						'width'  : this.width + 'px',
-						'height' : this.height + 'px'
+						'width'  : this.width + 'px'
 					});
 
 					this.$carousel.find('.'+ settings.slidesClass).css({
-						'width'  : this.count * this.width + 'px',
-						'height' : this.height  + 'px'
+						'width'  : this.count * this.width + 'px'
 					});
 
 				},
@@ -212,7 +208,7 @@
 								that.disableTransitions();
 								var position = -that.currentSlide * that.width;
 								that.$carousel.find('.' + settings.slidesClass).css({'left': position + 'px'});
-								that.enableTransitions();
+								setTimeout(function(){that.enableTransitions();}, 100); //to prevent transitions when fixing width
 							}, 300);
 					});
 
