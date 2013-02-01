@@ -75,6 +75,8 @@
   'navigation'      : true,                 //display navigation
   'pause'           : 5000,                 //pause between slides
   'speed'           : 2000,                 //speed for animation
+  'autostart'       : true,                 //autostart of carousel
+  'infinite'        : true,                 //infinite loop
   'wrapClass'       : 'carousel',
   'contentClass'    : 'carousel-content',
   'slidesClass'     : 'carousel-slides',
@@ -96,7 +98,9 @@
   <script>
   	$('#carousel').carousel({
 			'pause' : 3000,
-			'speed' : 500
+			'speed' : 500,
+			'autostart' : false,
+			'infinite' : true
 		});
   </script>
 </body>

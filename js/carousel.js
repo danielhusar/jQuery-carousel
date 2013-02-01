@@ -15,6 +15,8 @@
 				'navigation' 			: true,           			//display navigation
 				'pause'      			: 5000,           			//pause between slides
 				'speed'      			: 2000,           			//speed for animation
+				'autostart'				: true,
+				'infinite'				: true,
 				'wrapClass'				: 'carousel',
 				'contentClass'    : 'carousel-content',
 				'slidesClass'     : 'carousel-slides',
@@ -28,6 +30,7 @@
 
 			//helpers
 			var helpers = {
+				
 				css3transformations : function () {
 					var $elem = $('<div />').css({
 						'webkitTransform': 'matrix(1,1,1,1,1,1)',
@@ -54,7 +57,7 @@
 				$carousel 		  : {},
 				cssTransforms   : helpers.css3transformations(),
 				count           : 0,
-
+		
 				init : function ($carousel){
 					
 					//init properties
@@ -82,22 +85,25 @@
 						this.$carousel.prepend('<a href="#" class="'+ settings.arrowsClass +' '+ settings.prevArrowClass +'"><</a>');
 					}
 
-					//navigation is always appended, and just hided when not needed
-					var navItems = '',
-							navClass,
-							style = (!settings.navigation) ? 'style="display:none"' : '';
-					for(var i = 0; i < this.count; i++){
-						navClass = ( i === 0) ? settings.currentNavClass : '';
-						navItems = navItems + '<a href="#' + i + '" class="' + navClass + '"></a>';
-					};
-					this.$carousel.prepend('<div class="'+ settings.navigationClass +'" ' + style + '>' + navItems + '</div>');
+					//navigation
+					if(settings.navigation){
+						var navItems = '',
+								navClass;
+						for(var i = 0; i < this.count; i++){
+							navClass = ( i === 0) ? settings.currentNavClass : '';
+							navItems = navItems + '<a href="#' + i + '" class="' + navClass + '"></a>';
+						};
+						this.$carousel.prepend('<div class="'+ settings.navigationClass +'">' + navItems + '</div>');
+					}
 
 					//run the interval
-					this.interval = setInterval(function(){
-						if(that.exist()){
-							that.slideContent('left');
-						}
-					}, settings.pause);
+					if(settings.autostart){
+						this.interval = setInterval(function(){
+							if(that.exist()){
+								that.slideContent('left');
+							}
+						}, settings.pause);
+					}
 
 					//bind all events
 					this.bindEvents();
@@ -153,8 +159,8 @@
 
 				slideContent : function(direction){
 					var currentPos 		 = this.getPosition(),
-							prevPos    		 = (currentPos >= 1) ? currentPos - 1  : this.count - 1,
-							nextPos    		 = (currentPos < (this.count - 1)) ? currentPos + 1  : 0,
+							prevPos    		 = (currentPos >= 1) ? currentPos - 1  : ((settings.infinite) ? 0 : this.count - 1),
+							nextPos    		 = (currentPos < (this.count - 1)) ? currentPos + 1  : ((settings.infinite) ? this.count - 1 : 0),
 							goTo           = (direction === 'left') ? nextPos : prevPos;
 
 					this.updateNav(goTo);
