@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet" href="stylesheets/carousel.css">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -33,16 +34,72 @@
         <section id="main_content">
           <h1>Simple css3 responsive jquery carousel</h1>
 
-<p>Features:</p>
+          <p>Features:</p>
 
-<ul>
-<li>  responsive layout</li>
-<li>  css3 transitions with fallback to jquery animate</li>
-<li>  hardware acceleration on webkit</li>
-<li>  touch events</li>
-<li>  fully customizable</li>
-<li>  easy carousel destroy</li>
-</ul><p>See demo section for demo.</p>
+          <ul>
+            <li>  responsive layout</li>
+            <li>  css3 transitions with fallback to jquery animate</li>
+            <li>  hardware acceleration on webkit</li>
+            <li>  touch events</li>
+            <li>  fully customizable</li>
+            <li>  easy carousel destroy</li>
+          </ul>
+          <p>Demo.</p>
+
+          <div id="carousel">
+            <article class="slide">
+              <img src="images/1.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/2.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/3.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/4.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/5.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/6.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/7.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/8.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/9.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/10.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/11.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/12.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+            <article class="slide">
+              <img src="images/13.jpg" alt="first image">
+              <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et mi ac felis ullamcorper pulvinar.</span> 
+            </article>
+          </div>
         </section>
 
         <footer>
@@ -53,5 +110,15 @@
         
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="javascripts/carousel.js"></script>
+    <script>
+      $('#carousel').carousel({
+        'pause' : 3000,
+        'speed' : 500,
+        'autostart' : false,
+        'infinite' : true
+      });
+    </script>
   </body>
 </html>
